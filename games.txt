@@ -1,0 +1,1 @@
+tytuł 1; wydawca 1; ilość graczy min 1; ilość graczy maks 1; typ 1; czas rozgrywki 1
