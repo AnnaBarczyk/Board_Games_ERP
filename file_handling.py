@@ -1,21 +1,28 @@
 # Obsługa plików
 
-def import_file(filename="games.txt"):
-'''
-Importowanie danych z pliku .txt, zwracanie listy list. Parametr: nazwa pliku.
-Docelowy format:
-[tytuł (str); wydawca (str); minimalna ilość graczy (int); 
-maksymalna ilość graczy (int); typ (str); czas rozgrywki w minutach (int)]
-'''
-return games_list_of_lists
+def import_file(filename="games.csv"):
+    '''
+    Importowanie danych z pliku .csv, zwracanie listy list. Parametr: nazwa pliku.
+    Docelowy format:
+    [['Dixit', ' Rebel', ' 2010', ' 3', ' 6', ' imprezowa', ' 30', ' brak'], 
+    ['List Miłosny', ' 2013', ' 2', ' 5', ' imprezowa', ' 20', ' brak'], 
+    ['Pentago', ' Egmont', ' 2017', ' 2', ' 2', ' logiczna', ' 15', ' brak']]
+    '''
+    games_list_of_lists = []
 
-def export_file(games, filename="games.txt", mode="a"):
-'''
-Exortowanie danych do pliku .txt, zwracanie listy list. 
-Parametry: lista nowych gier (z game reports), nazwa pliku docelowego, 
-tryb zapisu "a" dodaje wpisy, tryb "w" nadpisuje plik .
-'''
+    with open(filename, "r") as file:
+        for line in file.readlines():
+            games_list_of_lists.append(line.strip().split(';'))
+    return games_list_of_lists
+
+
+def export_file(games, filename="games.scv", mode="a"):
+    '''
+    Exortowanie danych do pliku .csv, zwracanie listy list. 
+    Parametry: lista nowych gier (z game reports), nazwa pliku docelowego, 
+    tryb zapisu "a" dodaje wpisy, tryb "w" nadpisuje plik .
+    '''
 
 ## Opcjonalnie
 
-def export_results_to_new_file():
+# def export_results_to_new_file():
