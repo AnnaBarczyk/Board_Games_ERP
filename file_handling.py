@@ -27,9 +27,12 @@ def export_file(games_list_of_lists, filename="games.scv", mode="a"):
     if mode not in ['a','w']:
         ui.print_error_msg('Wrong write mode')
     with open(filename, mode) as file:
-        for game in games_list_of_lists:
+        for line in games_list_of_lists:
             file.write(';'.join(line) + '\r\n')
 
 ## Opcjonalnie
 
-# def export_results_to_new_file():
+# def export_results_to_new_file(result, filename):
+#    with open(filename, "w") as file:
+#        for line in result:
+#            file.write(';'.join(line) + '\r\n')
