@@ -1,5 +1,8 @@
 # Funkcje podmenu wyszukiwania
 
+def start_searching_functions():
+    pass
+
 def search_for_games_by_number_of_players(games_list_of_lists, number):
 '''
 Wyszykuje i przedstawia tylko gry dla określonej liczby graczy.

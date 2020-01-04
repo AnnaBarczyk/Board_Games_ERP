@@ -1,3 +1,7 @@
+
+def start_statistics_functions():
+    pass
+
 def average_game_time(games_list_of_lists):
 '''
 Oblicza i pokazuje średnią długość rozgrywki dla wszystkich gier.

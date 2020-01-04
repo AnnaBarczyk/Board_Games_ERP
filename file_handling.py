@@ -18,17 +18,18 @@ def import_file(filename="games.csv"):
     return games_list_of_lists
 
 
-def export_file(games_list_of_lists, filename="games.scv", mode="a"):
+def export_file(games_list_of_lists, filename="games.csv", mode="w"):
     '''
     Exortowanie danych do pliku .csv, zwracanie listy list. 
     Parametry: lista nowych gier (z game reports), nazwa pliku docelowego, 
     tryb zapisu "a" dodaje wpisy, tryb "w" nadpisuje plik .
     '''
-    if mode not in ['a','w']:
+    if mode not in ["a","w"]:
         ui.print_error_msg('Wrong write mode')
-    with open(filename, mode) as file:
-        for line in games_list_of_lists:
-            file.write(';'.join(line) + '\r\n')
+    else:
+        with open(filename, mode) as file:
+            for game in games_list_of_lists:
+                file.write(';'.join(game) + '\r\n')
 
 ## Opcjonalnie
 

@@ -1,4 +1,6 @@
 # Fukcje podmenu sortowania
+def start sorting_functions():
+    pass
 
 def sort_ascending(label, games_list_of_lists):
 '''
