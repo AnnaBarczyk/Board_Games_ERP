@@ -26,6 +26,7 @@ def remove_game_by_title(games_list_of_lists):
         if title_to_remove in game:
             games_list_of_lists.remove(game)
             file_handling.export_file(games_list_of_lists, filename="games.csv", mode="w")
+            break
         else:
             ui.print_error_msg("Sorry, no such game in list")
 
@@ -35,16 +36,20 @@ def update_game_by_title(games_list_of_lists):
     Aktualizuje cały wpis na podstawie podanego przez użytkownika tytułu z listy gier.
     '''
     title = "Please, enter informations to update game informations."
-    labels = ["Name of the game to update","Name", "Publisher", "Publish date", "Minimal amount of players", "Maximum amount of players", "Type", "Notes"]
+    labels = ["Name of the game to update","Name", "Publisher", "Publish date", "Minimal amount of players", "Maximum amount of players", "Time", "Type", "Notes"]
     inputs = ui.get_input(title, labels)
     game_to_update = inputs[0]
     new_informations = inputs[1:]
+    counter = 0
 
-    for game in games_list_of_lists:
-        if game_to_update in game:
-            game = new_informations
-            file_handling.export_file(games_list_of_lists, filename="games.csv", mode="w")
-        else:
-            ui.print_error_msg("Sorry, no such game in list")
+    if game_to_update in games_list_of_lists:
+        for game in games_list_of_lists:
+            if game_to_update == game[0]:
+                break
+            else:
+                counter += 1
+    else:
+        ui.print_error_msg("Sorry, no such game!")
 
-
+    games_list_of_lists[counter] = new_informations
+    file_handling.export_file(games_list_of_lists, filename="games.csv", mode="w")
