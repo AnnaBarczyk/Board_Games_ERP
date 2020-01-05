@@ -53,3 +53,6 @@ def print_error_msg(message):
     '''
     print(message)
 
+def print_answear(message):
+    print(message)
+

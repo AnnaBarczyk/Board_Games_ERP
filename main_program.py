@@ -3,6 +3,7 @@ import ui
 import file_handling
 import game_reports
 import searching_functions
+import statistics_functions
 import os
 
 def main():
@@ -33,7 +34,8 @@ def main():
             os. system('clear')
             searching_functions.start_searching_functions()
         elif chosen_option == 6:
-            pass
+            os. system('clear')
+            statistics_functions.start_statistics_functions()
         elif chosen_option == 7:
             pass
         elif chosen_option == 8:
